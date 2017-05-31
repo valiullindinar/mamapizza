@@ -69,7 +69,7 @@ $(document).ready(function(){
 			function func() {
 				$('#preLogo').addClass('preLogo-readyNext');
 			}
-			setTimeout(func, 350);
+			setTimeout(func, 280);
 		}	
 	})
 	$('#preLogo').lazylinepainter('paint');

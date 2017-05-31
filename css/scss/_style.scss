@@ -11,3 +11,45 @@ body{
 	font-size: $fontSize + px;
 }
 
+#preLogo{
+	width: 140px;
+	height: 52px;
+	transform: scale(1);
+	transition: .1s ease-out;
+	&.preLogo-ready{
+		transform: scale(0);
+	}
+	&.preLogo-readyNext{
+		transform: scale(1);
+	}
+	&.preLogo-readyNext{
+		.first, .second, .third, .fourth, .fifth{
+			fill-opacity: 1;
+			stroke-width: 0;
+		}
+		.fifth{
+			fill: #000000;
+		}
+	}
+	.first{
+		stroke: #28702A;
+		fill: #28702A;
+		fill-opacity: 0.1;
+	}
+	.second{
+		stroke: #FDBA12;
+		fill: #FDBA12;
+		fill-opacity: 0.1;
+	}
+	.third{
+		stroke: #E54A21;
+		fill: #E54A21;
+		fill-opacity: 0.1;
+	}
+	.fourth{
+		stroke: #00B4AE;
+		fill: #00B4AE;
+		fill-opacity: 0.1;
+	}
+	
+}

@@ -149,6 +149,7 @@ STYLE LG,MD
 	
 	.s-help-text{
 		font-family: $font-Brody;
+		
 		font-size: (24/$fontSize)+rem;
 		color: #00b4ae;
 		margin-left: (40/$fontSize)+rem;
@@ -157,6 +158,9 @@ STYLE LG,MD
 	
 	.beep-icon{
 		float: left;
+		margin-left: (12/$fontSize) + rem;
+		padding-top: (8/$fontSize) + rem;
+		padding-bottom: (8/$fontSize) + rem;
 	}
 }
 

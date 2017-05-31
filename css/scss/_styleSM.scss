@@ -1,4 +1,9 @@
 @media (min-width: $sm-width-media) and (max-width: $md-width-media - 1px) {
+	$font-size: 12px;
+	body{
+		font-size: 12px;
+	}
+	
 	.about-menu-btn{
 		margin-left: 0px;
 	}

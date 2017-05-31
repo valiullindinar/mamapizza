@@ -1,18 +1,18 @@
 /*
 STYLE LG,MD
 */
-@media (min-width: 992px) {
+@media (min-width: $md-width-media) {
 	
 }
 
 /*
 	STYLE LG,MD,SM
 */
-@media (min-width: 768px) {
+@media (min-width: $sm-width-media) {
 	.desktop-header{
-		max-width: 1920px;
+		max-width: 1920/$fontSize + rem;
 		margin: 0 auto;
-		padding: 0 40px;
+		padding: 0 40/$fontSize + rem;
 	}
 
 	.topl-menu{
@@ -28,7 +28,7 @@ STYLE LG,MD
 					overflow: hidden;
 					a{
 						text-decoration: none;
-						font-size: 13px;
+						font-size: (13/$fontSize) + rem;
 						color: $black;
 						font-weight: 500;
 						display: block;
@@ -81,10 +81,10 @@ STYLE LG,MD
 			li{
 				display: block;
 				float: left;
-				padding: 12px 0px;
-				margin-right: 25px;
+				padding: (12/$fontSize)+rem 0em;
+				margin-right: 25/$fontSize + rem;
 				a{
-					font-size: 12px;
+					font-size: (12/$fontSize) + rem;
 					font-weight: 500;
 					color: $black;
 					display: block;
@@ -95,7 +95,7 @@ STYLE LG,MD
 						width: 23px;
 						text-align: center;
 						vertical-align: middle;
-						margin-right: 5px;
+						margin-right: 5/$fontSize + rem;
 						img{
 							display: block;
 							margin: 0 auto;
@@ -116,16 +116,16 @@ STYLE LG,MD
 	
 	.about-menu-btn{
 		float: right;
-		padding: 12px 0px;
+		padding: (12/$fontSize)+rem 0em;
 		cursor: pointer;
-		margin-left: 20px;
+		margin-left: (20/$fontSize)+rem;
 		.about-menu{
-			font-size: 12px;
+			font-size: (12/$fontSize)+rem;
 		}
 		.icons-box{
 			display: inline-block;
 			vertical-align: middle;
-			margin-right: 7px;
+			margin-right: (7/$fontSize)+rem;
 			.line-icon{
 				display: block;
 				width: 18px;
@@ -133,7 +133,7 @@ STYLE LG,MD
 				
 				background: #fcba12;
 				&:not(:last-child){
-					margin-bottom: 4px;
+					margin-bottom: (4/$fontSize)+rem;
 				}
 			}
 			
@@ -149,9 +149,13 @@ STYLE LG,MD
 	
 	.s-help-text{
 		font-family: $font-Brody;
-		font-size: 24px;
+		font-size: (24/$fontSize)+rem;
 		color: #00b4ae;
-		margin-left: 40px;
+		margin-left: (40/$fontSize)+rem;
+		float: left;
+	}
+	
+	.beep-icon{
 		float: left;
 	}
 }
@@ -160,7 +164,7 @@ STYLE LG,MD
 	STYLE XS,SM
 */
 
-@media (max-width: 991px) {
+@media (max-width: $md-width-media - 1px) {
 	
 }
 
@@ -168,6 +172,6 @@ STYLE LG,MD
 	STYLE XS,SM,MD
 */
 
-@media (max-width: 1199px) {
+@media (max-width: $lg-width-media - 1px) {
 	
 }

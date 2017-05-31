@@ -9,7 +9,14 @@ STYLE LG,MD
 	STYLE LG,MD,SM
 */
 @media (min-width: 768px) {
+	.desktop-header{
+		max-width: 1920px;
+		margin: 0 auto;
+		padding: 0 40px;
+	}
+
 	.topl-menu{
+		float: left;
 		nav{
 			ul{
 				list-style-type: none;
@@ -68,7 +75,7 @@ STYLE LG,MD
 	}
 
 	.topr-menu{
-		float: left;
+		float: right;
 		ul{
 			list-style-type: none;
 			li{
@@ -99,6 +106,9 @@ STYLE LG,MD
 						animation: top_bottom .5s;
 						-webkit-animation: top_bottom .5s;
 					}
+					&:hover{
+						text-decoration: underline;
+					}
 				}
 			}
 		}
@@ -108,6 +118,7 @@ STYLE LG,MD
 		float: right;
 		padding: 12px 0px;
 		cursor: pointer;
+		margin-left: 20px;
 		.about-menu{
 			font-size: 12px;
 		}
@@ -119,10 +130,29 @@ STYLE LG,MD
 				display: block;
 				width: 18px;
 				height: 2px;
-				margin-bottom: 4px;
+				
 				background: #fcba12;
+				&:not(:last-child){
+					margin-bottom: 4px;
+				}
 			}
+			
 		}
+	}
+	
+	.logo{
+		float: left;
+		img{
+			max-width: 140px;
+		}
+	}
+	
+	.s-help-text{
+		font-family: $font-Brody;
+		font-size: 24px;
+		color: #00b4ae;
+		margin-left: 40px;
+		float: left;
 	}
 }
 

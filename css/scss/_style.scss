@@ -6,7 +6,11 @@ $orange: #fdba12;
 
 $gray: #7b7b7b;
 
-$red: #E54A21;
+$red: #e54b21;
+
+html{
+	font-size: 16px;
+}
 
 body{
 	font-family: $font-avenir;
@@ -64,7 +68,8 @@ body{
 .slider-row{
 	.owl-dots{
 		text-align: center;
-		margin-top: -5%;
+		position: relative;
+		top: -(50/$fontSize) + rem;
 		.owl-dot{
 			display: inline-block;
 			width: 10px;

@@ -12,7 +12,7 @@ STYLE LG,MD
 	.desktop-header{
 		max-width: 1920/$fontSize + rem;
 		margin: 0 auto;
-		padding: 0 2%;
+		padding: 0 (40/$fontSize) + rem;
 	}
 
 	.topl-menu{
@@ -122,7 +122,7 @@ STYLE LG,MD
 		}
 		.icons-box{
 			display: inline-block;
-			vertical-align: middle;
+			vertical-align: bottom;
 			margin-right: (7/$fontSize)+rem;
 			.line-icon{
 				display: block;
@@ -213,6 +213,7 @@ STYLE LG,MD
 			vertical-align: middle;
 			font-size: (12/$fontSize) + rem;
 			margin-top: (4/$fontSize) + rem;
+			@include border-radius((58/$fontSize) + rem);
 			.s-callback-box{
 				line-height: (34/$fontSize) + rem;
 				padding-left: 15px;
@@ -220,6 +221,7 @@ STYLE LG,MD
 				border: solid 0.5px #f5a623;
 				@include border-radius((58/$fontSize) + rem);
 				cursor: pointer;
+				overflow: hidden;
 			}
 		}		
 	}
@@ -387,11 +389,29 @@ STYLE LG,MD
 	}
 	
 	.slider-row .main-slider{
-		
 		margin-top: -(10/$fontSize) + rem;
-		
-		
 	}
+	
+	.promo-con{
+		margin: 0 auto;
+		max-width: (1920/$fontSize) + rem;
+		padding: 0px (40/$fontSize) + rem;
+		.promo-row{
+			margin-left: -(25/$fontSize) + rem;
+			margin-right: -(25/$fontSize) + rem;
+			.promo-one{
+				width: 33%;
+				float: left;
+				padding-left: (25/$fontSize) + rem;
+				padding-right: (25/$fontSize) + rem;
+				.promo-box-out{
+					height: 200px;
+					background: $red;
+				}
+			}
+		}
+	}
+	
 }
 
 /*

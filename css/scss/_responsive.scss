@@ -12,7 +12,7 @@ STYLE LG,MD
 	.desktop-header{
 		max-width: 1920/$fontSize + rem;
 		margin: 0 auto;
-		padding: 0 40/$fontSize + rem;
+		padding: 0 2%;
 	}
 
 	.topl-menu{
@@ -78,6 +78,7 @@ STYLE LG,MD
 		float: right;
 		ul{
 			list-style-type: none;
+			padding-left: 0px;
 			li{
 				display: block;
 				float: left;
@@ -152,15 +153,42 @@ STYLE LG,MD
 		
 		font-size: (24/$fontSize)+rem;
 		color: #00b4ae;
-		margin-left: (40/$fontSize)+rem;
+		margin-left: 2.8%;
 		float: left;
 	}
 	
 	.beep-icon{
 		float: left;
-		margin-left: (12/$fontSize) + rem;
+		margin-left: 0.8%;
 		padding-top: (8/$fontSize) + rem;
 		padding-bottom: (8/$fontSize) + rem;
+	}
+	.s-right-info{
+		float: right;
+		.promo-box{
+			float: left;
+			margin-right: (30/$fontSize) + rem;
+			font-size: (12/$fontSize) + rem;
+			font-weight: 500;
+			line-height: 2.1;
+			color: $black;
+			padding-left: (12/$fontSize) + rem;
+			padding-right: (12/$fontSize) + rem;
+			padding-top: (4/$fontSize) + rem;
+			padding-bottom: (4/$fontSize) + rem;
+			@include border-radius((58/$fontSize) + rem);
+			border: solid 0.5px #b3b3b3;
+			cursor: pointer;
+		}
+		
+		.s-col-info{
+			float: left;
+			margin-right: (35/$fontSize) + rem;
+		}
+		
+		.s-callback-btn{
+			float: left;
+		}
 	}
 }
 

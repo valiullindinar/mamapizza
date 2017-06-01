@@ -1,10 +1,30 @@
 @media (min-width: $sm-width-media) and (max-width: $md-width-media - 1px) {
-	$font-size: 12px;
+	$fontSize: 12;
 	body{
-		font-size: 12px;
+		font-size: $fontSize + px;
 	}
 	
 	.about-menu-btn{
 		margin-left: 0px;
 	}
-}
+	
+	.topr-menu{
+		ul{
+			li{
+				margin-right: 1rem;
+			}
+		}
+	}
+	
+	.logo img{
+		max-width: 100px;
+	}
+	
+	.beep-icon{
+		display: none;
+	}
+	
+	.s-help-text{
+		font-size: 1rem;
+	}
+}	

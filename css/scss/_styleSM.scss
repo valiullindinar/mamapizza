@@ -16,8 +16,13 @@
 		}
 	}
 	
+	.logo{
+		line-height: 52px;
+	}
+	
 	.logo img{
 		max-width: 100px;
+		
 	}
 	
 	.beep-icon{
@@ -26,5 +31,20 @@
 	
 	.s-help-text{
 		font-size: 1rem;
+	}
+	
+	.t-header{
+		.meal-menu{
+			nav{
+				ul{
+					&>li{
+						padding: 0px 4px;
+						&>a{
+							font-size: (7/$fontSize) + rem;
+						}
+					}
+				}
+			}
+		}
 	}
 }	

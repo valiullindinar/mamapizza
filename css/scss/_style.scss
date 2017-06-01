@@ -2,8 +2,11 @@ $fontSize:16;
 
 $black: #181818;
 
-$orange: #ee961b;
+$orange: #fdba12;
 
+$gray: #7b7b7b;
+
+$red: #E54A21;
 
 body{
 	font-family: $font-avenir;
@@ -52,5 +55,29 @@ body{
 		fill: #00B4AE;
 		fill-opacity: 0.1;
 	}
-	
+}
+
+.main-slider.owl-carousel.owl-loaded{
+	display: inline-block;
+}
+
+.slider-row{
+	.owl-dots{
+		text-align: center;
+		margin-top: -5%;
+		.owl-dot{
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			background: #fff;
+			position: relative;
+			@include border-radius(50%);
+			&:not(:last-child){
+				margin-right: 15px;
+			}
+			&.active{
+				background: $orange;
+			}
+		}
+	}
 }

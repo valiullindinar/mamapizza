@@ -41,12 +41,12 @@ ul, ol{
     margin-left: auto;
 }
 
-.container:before,.container:after, .row:before, .row:after, *:before, *:after{
+.container:before,.container:after, .row:before, .row:after, div:before, div:after, ul:before, ul:after, nav:before, nav:after{
 	content: '';
 	display: table;
 }
 
-.container:after, .row:after, *:after{
+.container:after, .row:after, div:before, div:after, ul:after, nav:before, nav:after{
 	clear: both;
 }
 

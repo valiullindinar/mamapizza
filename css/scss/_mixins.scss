@@ -3,3 +3,9 @@
 	-moz-border-radius: $radius;
 	border-radius: $radius;
 }
+
+@mixin transform-rotate($degree){
+	-ms-transform: rotate($degree); /* IE 9 */
+    -webkit-transform: rotate($degree); /* Safari */
+    transform: rotate($degree);
+}

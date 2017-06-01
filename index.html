@@ -4,17 +4,19 @@
 	<meta charset="UTF-8">
 	<title>Pizza main</title>
 	
+	<link rel="stylesheet" href="scripts/owlCarousel/owl.carousel.min.css">
+	
 	<link rel="stylesheet" href="css/style.min.css">
 	
 	<script type="text/javascript" src="scripts/prog/jquery.min.js"></script>
-	<script type="text/javascript" src="scripts/prog/walkway.js"></script>
 	<script src="scripts/prog/jquery.lazylinepainter-1.7.0.min.js"></script>
+	<script type="text/javascript" src="scripts/owlCarousel/owl.carousel.min.js"></script>
 	<script type="text/javascript" src="scripts/main.js"></script>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<div id="preLogo"></div>
+<!-- <div id="preLogo"></div> -->
 
 	<header>
 		<div class="mobile-header visible-xs">
@@ -25,8 +27,8 @@
 				<div class="topl-menu">
 					<nav>
 						<ul>
-							<li class="active ripple"><a href="#">Доставка</a></li>
-							<li class="ripple"><a href="#">Кафе</a></li>
+							<li class="active"><a href="#">Доставка</a></li>
+							<li><a href="#">Кафе</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -91,16 +93,69 @@
 						<div class="ph-head">
 							<a href="tel:83412500040" class="ph-head-link">8 (3412) 500-040</a>
 						</div>
-						<div class="s-today">Сегодня работаем до 23:00</div>
+						<div class="s-today-work">Сегодня работаем до 23:00</div>
 					</div>
-					<div class="s-callback-btn">
+					<div class="s-callback-btn ripple">
 						<div class="s-callback-box">Заказ звонка оператора</div>
 					</div>
 				</div>
 			</div>
+			<div class="t-header">
+				<div class="meal-menu">
+					<nav>
+						<ul>
+							<li class="active"><a href="#">Пиццы</a></li>
+							<li><a href="#">Комбо</a></li>
+							<li><a href="#">Напитки</a></li>
+							<li><a href="#">Салаты</a></li>
+							<li><a href="#">Десерты</a></li>
+							<li><a href="#">Закуски</a></li>
+							<li><a href="#">Соусы</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="stock-box">
+					<a href="#" class="stock-link">
+						<img src="images/icons/fire.svg" alt="">
+						Акции
+					</a>
+				</div>
+				<div class="t-right-menu">
+					<div class="login">
+						<img src="images/icons/man-user.svg" alt="">
+						Войти
+					</div>
+					<div class="m-basket">
+						<div class="m-basket-out ripple">
+							<div class="m-basket-btn">
+								<span class="m-basket-icon">
+									<span class="m-basket-count">4</span>
+								</span>
+								<span class="m-basket-price">1200 р.</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-			
-		
 	</header>
+	
+	<div class="slider-row">
+		<div class="owl-carousel main-slider">
+			<div class="item">
+				<img src="images/content/oneone.jpg" alt="">
+			</div>
+			<div class="item">
+				<img src="images/content/oneone.jpg" alt="">
+			</div>
+			<div class="item">
+				<img src="images/content/oneone.jpg" alt="">
+			</div>
+			<div class="item">
+				<img src="images/content/oneone.jpg" alt="">
+			</div>
+		</div>
+	</div>
+	
 </body>
 </html>

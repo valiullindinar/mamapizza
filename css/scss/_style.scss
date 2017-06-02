@@ -8,6 +8,12 @@ $gray: #7b7b7b;
 
 $red: #e54b21;
 
+$tirq: #00b5af;
+
+$ohra: #fff4e4;
+
+$white: #ffffff;
+
 html{
 	font-size: 16px;
 }
@@ -17,6 +23,10 @@ body{
 	font-weight: 400;
 	color: $black;
 	font-size: $fontSize + px;
+}
+
+img{
+	max-width: 100%;
 }
 
 #preLogo{

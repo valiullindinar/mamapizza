@@ -67,6 +67,25 @@ $(document).ready(function(){
 		items: 1
 	})
 	//main slider END
+	
+	
+	//height == heighest element
+	function max_height(block, height_block){
+		var mh = 0;
+		block.each(function () {
+			var h_block = parseInt($(this).height());
+			if(h_block > mh) {
+				mh = h_block;
+			};
+		});
+		height_block.height(mh);		
+	}
+	max_height($('.promo-img img'), $('.promo-box-in'));
+	//height == heighest element
+	
+	$( window ).resize(function() {
+		max_height($('.promo-img img'), $('.promo-box-in'));
+	})
 })
 	 
 	  

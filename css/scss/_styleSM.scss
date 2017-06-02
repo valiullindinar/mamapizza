@@ -1,5 +1,9 @@
 @media (min-width: $sm-width-media) and (max-width: $md-width-media - 1px) {
-	$fontSize: 12;
+	/* $fontSize: 10; */
+	html{
+		font-size: $fontSize + px;
+	}
+	
 	body{
 		font-size: $fontSize + px;
 	}
@@ -28,23 +32,13 @@
 	.beep-icon{
 		display: none;
 	}
+	.cat-product-one{
+		width: 33.3333%;
+	}
 	
 	.s-help-text{
 		font-size: 1rem;
 	}
 	
-	.t-header{
-		.meal-menu{
-			nav{
-				ul{
-					&>li{
-						padding: 0px 4px;
-						&>a{
-							font-size: (7/$fontSize) + rem;
-						}
-					}
-				}
-			}
-		}
-	}
+	
 }	

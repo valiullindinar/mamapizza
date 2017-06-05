@@ -105,6 +105,13 @@ $(document).ready(function(){
 		$(this).css('background', '#' + bg);
 	})
 	
+	$('.cat-product-bas').each(function(){
+		var color = $(this).parents('[data-color]').data('color');
+		$(this).css('background-color', '#' + color);
+	})
+	
+	$('.cat-product-box').matchHeight();
+	
 	
 	max_height($('.promo-img img'), $('.promo-box-in'));
 	

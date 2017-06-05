@@ -1,4 +1,21 @@
-@media (min-width: $lg-width-media - 1px) {
+@media (min-width: $lg-width-media) {
+	.s-help-text{
+		margin-left: 4vw;
+	}
+	
+	.beep-icon{
+		margin-left: 3.5vw;
+	}
+	
+	.s-right-info{
+		.promo-box{
+			margin-right: 3vw;
+		}
+		.s-col-info{
+			margin-right: 3vw;
+		}
+	}
+	
 	
 	.cat-product-one{
 		width: 25%;

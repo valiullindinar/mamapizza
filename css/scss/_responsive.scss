@@ -455,7 +455,7 @@ STYLE LG,MD
 		padding-top: (50/$fontSize) + rem;
 		.category-left{
 			float: left;
-			width: 20%;
+			width: 15%;
 			.category-title{
 				color: $black;
 				font-size: 36px;
@@ -465,7 +465,7 @@ STYLE LG,MD
 		}
 		.cat-product{
 			float: left;
-			width: 80%;
+			width: 85%;
 			padding-left: (10/$fontSize) + rem;
 			padding-right: (10/$fontSize) + rem;
 			.cat-product-row{
@@ -475,17 +475,64 @@ STYLE LG,MD
 					float: left;
 					padding-left: (10/$fontSize) + rem;
 					padding-right: (10/$fontSize) + rem;
+					.cat-product-box{
+						margin-bottom: (40/$fontSize) + rem;
+						position: relative;
+						padding-bottom: (40/$fontSize) + rem;
+					}
 					.cat-product-content{
 						padding-left: (20/$fontSize) + rem;
 						.cat-product-title{
 							font-size: (21/$fontSize) + rem;
 							margin-top: (20/$fontSize) + rem;
 							margin-bottom: (10/$fontSize) + rem;
+							cursor: pointer;
 						}
 						.cat-product-descr{
 							font-size: (12/$fontSize) + rem;
 							font-weight: 500;
 							color: $gray_oth;
+							margin-bottom: (35/$fontSize) + rem;
+						}
+					}
+					
+					.cat-product-bottom{
+						position: absolute;
+						left: (15/$fontSize) + rem;
+						right: (15/$fontSize) + rem;
+						bottom: 0;
+						.cat-product-price{
+							display: inline-block;
+							float: left;
+							vertical-align: middle;
+							font-size: (28/$fontSize) + rem;
+							line-height: (36/$fontSize) + rem;
+							font-family: $font-Poster;
+						}
+						.cat-product-bas-count{
+							display: inline-block;
+							float: right;
+							vertical-align: middle;
+							.cat-product-bas{
+								cursor: pointer;
+								display: none;
+								color: #fff;
+								border-radius: (100/$fontSize) + rem;
+								line-height: (36/$fontSize) + rem;
+								font-weight: 600;
+								font-size: (13/$fontSize) + rem;
+								padding-left: (20/$fontSize) + rem;
+								padding-right: (20/$fontSize) + rem;
+								&.active{
+									display: block;
+								}
+							}
+							.cat-product-count{
+								display: none;
+								&.active{
+									display: block;
+								}
+							}
 						}
 					}
 				}
@@ -514,12 +561,16 @@ STYLE LG,MD
 	.cat-product-img{
 		display: table;
 		width: 100%;
+		cursor: pointer;
 		.cat-product-img-in{
 			display: table-cell;
 			height: (200/$fontSize) + rem;
 			vertical-align: middle;
 			text-align: center;
 			padding: 0 (10/$fontSize) + rem;
+			.cat-product-i{
+				display: inline;
+			}
 			img{
 				max-height: 85%;
 			}

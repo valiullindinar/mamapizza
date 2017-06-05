@@ -460,6 +460,7 @@ STYLE LG,MD
 				color: $black;
 				font-size: 36px;
 				font-family: $font-Poster;
+				margin-bottom: (30/$fontSize) + rem;
 			}
 		}
 		.cat-product{
@@ -474,11 +475,56 @@ STYLE LG,MD
 					float: left;
 					padding-left: (10/$fontSize) + rem;
 					padding-right: (10/$fontSize) + rem;
+					.cat-product-content{
+						padding-left: (20/$fontSize) + rem;
+						.cat-product-title{
+							font-size: (21/$fontSize) + rem;
+							margin-top: (20/$fontSize) + rem;
+							margin-bottom: (10/$fontSize) + rem;
+						}
+						.cat-product-descr{
+							font-size: (12/$fontSize) + rem;
+							font-weight: 500;
+							color: $gray_oth;
+						}
+					}
+				}
+			}
+		}
+	}
+	.category-filter-list{
+		&>li{
+			&>a{
+				display: inline-block;
+				padding: (8/$fontSize) + rem (10/$fontSize) + rem;
+				/* margin-bottom: (4/$fontSize) + rem; */
+				border-radius: (18/$fontSize) + rem;
+				&:hover{
+					background-color: rgba(0,0,0,0.02);
+				}
+			}
+			&.active{
+				&>a{
+					
 				}
 			}
 		}
 	}
 	
+	.cat-product-img{
+		display: table;
+		width: 100%;
+		.cat-product-img-in{
+			display: table-cell;
+			height: (200/$fontSize) + rem;
+			vertical-align: middle;
+			text-align: center;
+			padding: 0 (10/$fontSize) + rem;
+			img{
+				max-height: 85%;
+			}
+		}
+	}
 }
 
 /*

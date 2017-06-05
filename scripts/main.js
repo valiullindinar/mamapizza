@@ -36,7 +36,15 @@
 	}
 	//preLogo svg paint END
 	 
-	 
+	//function hex to rgb
+	function hexToRgbNew(hex) {
+		var arrBuff = new ArrayBuffer(4);
+		var vw = new DataView(arrBuff);
+		vw.setUint32(0,parseInt(hex, 16),false);
+		var arrByte = new Uint8Array(arrBuff);
+		return arrByte[1] + "," + arrByte[2] + "," + arrByte[3];
+	}
+	//function hex to rgb	
 $(document).ready(function(){
 	//preLogo svg animate
 	$('#preLogo').lazylinepainter({
@@ -69,7 +77,7 @@ $(document).ready(function(){
 	//main slider END
 	
 	
-	//height == heighest element
+	//function hight == highest element
 	function max_height(block, height_block){
 		var mh = 0;
 		block.each(function () {
@@ -80,8 +88,25 @@ $(document).ready(function(){
 		});
 		height_block.height(mh);		
 	}
+	//function height == highest element END
+	
+	//цвет фильтра и bg.active == data-color.parents
+	$('.category-filter-list>li>a').each(function(){
+		var color = $(this).parents('[data-color]').data('color');
+		$(this).css('color', '#' + color);
+		if($(this).parent('li').hasClass('active')){
+			$(this).css('background-color', 'rgba(' + hexToRgbNew(color) + ', 1)');
+		}
+	})
+	//цвет фильтра == data-color.parents END
+	
+	$('.cat-product-img').each(function(){
+		var bg = $(this).parents('[data-background]').data('background');
+		$(this).css('background', '#' + bg);
+	})
+	
+	
 	max_height($('.promo-img img'), $('.promo-box-in'));
-	//height == heighest element
 	
 	$( window ).resize(function() {
 		max_height($('.promo-img img'), $('.promo-box-in'));

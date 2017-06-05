@@ -6,6 +6,8 @@ $orange: #fdba12;
 
 $gray: #7b7b7b;
 
+$gray_oth: #878787;
+
 $red: #e54b21;
 
 $tirq: #00b5af;
@@ -92,6 +94,21 @@ img{
 			}
 			&.active{
 				background: $orange;
+			}
+		}
+	}
+}
+
+.category-filter-list{
+	padding-left: 0;
+	list-style-type: none;
+	&>li{
+		&>a{
+			text-decoration: none;
+		}
+		&.active{
+			&>a{
+				color: #fff!important;
 			}
 		}
 	}

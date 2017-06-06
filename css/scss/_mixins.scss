@@ -9,3 +9,27 @@
     -webkit-transform: rotate($degree); /* Safari */
     transform: rotate($degree);
 }
+
+@mixin transform-rotate-translateY($degree, $trans){
+	-ms-transform: rotate($degree) translateY($trans); /* IE 9 */
+	-webkit-transform: rotate($degree) translateY($trans); /* Safari */
+	transform: rotate($degree) translateY($trans);
+}
+
+@mixin transform-translateY($trans){
+	-ms-transform: translateY($trans); /* IE 9 */
+	-webkit-transform: translateY($trans); /* Safari */
+	transform: translateY($trans);
+}
+
+@mixin transform-translateX($trans){
+	-ms-transform: translateX($trans); /* IE 9 */
+	-webkit-transform: translateX($trans); /* Safari */
+	transform: translateX($trans);
+}
+
+@mixin transform-translate($trans){
+	-ms-transform: translateY($trans); /* IE 9 */
+	-webkit-transform: translateY($trans); /* Safari */
+	transform: translateY($trans);
+}

@@ -103,37 +103,40 @@
 				</div>
 			</div>
 			<div class="t-header">
-				<div class="meal-menu">
-					<nav>
-						<ul>
-							<li class="active"><a href="#">Пиццы</a></li>
-							<li><a href="#">Комбо</a></li>
-							<li><a href="#">Напитки</a></li>
-							<li><a href="#">Салаты</a></li>
-							<li><a href="#">Десерты</a></li>
-							<li><a href="#">Закуски</a></li>
-							<li><a href="#">Соусы</a></li>
-						</ul>
-					</nav>
-				</div>
-				<div class="stock-box">
-					<a href="#" class="stock-link">
-						<img src="images/icons/fire.svg" alt="">
-						Акции
-					</a>
-				</div>
-				<div class="t-right-menu">
-					<div class="login">
-						<img src="images/icons/man-user.svg" alt="">
-						Войти
+				<div class="t-header-in">
+					<div class="meal-menu">
+						<nav>
+							<ul>
+								<li class="active"><a href="#" data-menu="1">Пиццы</a></li>
+								<li><a href="#" data-menu="2">Комбо</a></li>
+								<li><a href="#" data-menu="3">Напитки</a></li>
+								<li><a href="#" data-menu="4">Салаты</a></li>
+								<li><a href="#" data-menu="5">Десерты</a></li>
+								<li><a href="#" data-menu="6">Закуски</a></li>
+								<li><a href="#" data-menu="7">Соусы</a></li>
+							</ul>
+						</nav>
+						<!--аттрибут data-menu используется для прокрутки до категории там будет аттрибут data-category-->
 					</div>
-					<div class="m-basket">
-						<div class="m-basket-out ripple">
-							<div class="m-basket-btn">
-								<span class="m-basket-icon">
-									<span class="m-basket-count">4</span>
-								</span>
-								<span class="m-basket-price">1200 р.</span>
+					<div class="stock-box">
+						<a href="#" class="stock-link">
+							<img src="images/icons/fire.svg" alt="">
+							Акции
+						</a>
+					</div>
+					<div class="t-right-menu">
+						<div class="login">
+							<img src="images/icons/man-user.svg" alt="">
+							Войти
+						</div>
+						<div class="m-basket">
+							<div class="m-basket-out ripple">
+								<div class="m-basket-btn">
+									<span class="m-basket-icon">
+										<span class="m-basket-count">4</span>
+									</span>
+									<span class="m-basket-price">1200 р.</span>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -207,8 +210,9 @@
 			</div>
 		</div>
 	</div>
-	<div class="category-row" data-color="e54b21" data-background="fff4e4">
-	<!--аттрибут data-color - для цвета фильтра и кнопки "В корзину", присваивается в файле scripts/main.js !!! указывается в hex без решетки-->
+	<div class="category-row" data-color="e54b21" data-background="fff4e4" data-category="1">
+	<!--аттрибут data-color - для цвета фильтра и кнопки "В корзину", присваивается для этих элементов в файле scripts/main.js !!! указывается в hex без решетки-->
+	<!--аттрибут data-category - см. data-menu-->
 		<div class="category-out">
 			<div class="category-in">
 				<div class="category-left">
@@ -226,6 +230,7 @@
 								<li><a href="#">Острые</a></li>
 								<li><a href="#">Без болгарского перца</a></li>
 								<li><a href="#">Без свинины</a></li>
+								
 							</ul>
 						</div>
 					</div>
@@ -436,25 +441,21 @@
 			</div>
 		</div>
 	</div>
-	<div class="category-row" data-color="00b5af" data-background="e3f8f7">
-	<!--аттрибут data-color - для цвета фильтра и кнопки "В корзину", присваивается в файле scripts/main.js !!! указывается в hex без решетки-->
+	<div class="category-row" data-color="00b5af" data-background="e3f8f7" data-category="4">
+	<!--аттрибут data-color - для цвета фильтра и кнопки "В корзину", присваивается для этих элементов в файле scripts/main.js !!! указывается в hex без решетки-->
+	<!--аттрибут data-category - см. data-menu-->
 		<div class="category-out">
 			<div class="category-in">
 				<div class="category-left">
 					<div class="category-left-box">
-						<div class="category-title">Пицца</div>
+						<div class="category-title">Салаты</div>
 						<div class="category-filter">
 							<ul class="category-filter-list">
 								<li class="active"><a href="#">Все</a></li>
-								<li><a href="#">Без грибов</a></li>
-								<li><a href="#">Без лука</a></li>
-								<li><a href="#">Без маслин</a></li>
-								<li><a href="#">Без мяса</a></li>
-								<li><a href="#">Детям</a></li>
-								<li><a href="#">Легкие</a></li>
-								<li><a href="#">Острые</a></li>
-								<li><a href="#">Без болгарского перца</a></li>
-								<li><a href="#">Без свинины</a></li>
+								<li><a href="#">Фильтр 1</a></li>
+								<li><a href="#">Фильтр 2</a></li>
+								<li><a href="#">Фильтр 3</a></li>
+								<li><a href="#">Фильтр 4</a></li>
 							</ul>
 						</div>
 					</div>
@@ -465,16 +466,16 @@
 							<div class="cat-product-box">
 								<div class="cat-product-img">
 									<div class="cat-product-img-in">
-										<img src="images/content/pizza-1.png" alt="">
+										<img src="images/content/salad-1.png" alt="">
 										<div class="cat-product-icon"></div>
 									</div>
 								</div>
 								<div class="cat-product-content">
-									<div class="cat-product-title">Пицца с курицей и ананасами Пицца с курицей и ананасами</div>
+									<div class="cat-product-title">Салат «Греческий»</div>
 									<div class="cat-product-descr">Сыр Моцарелла, ветчина, колбаски охотничьи, соус томатный...</div>
 								</div>	
 									<div class="cat-product-bottom">
-										<div class="cat-product-price">475 р.</div>
+										<div class="cat-product-price">275 р.</div>
 										<div class="cat-product-bas-count">
 											<div class="cat-product-bas active">
 												В корзину
@@ -493,16 +494,16 @@
 							<div class="cat-product-box">
 								<div class="cat-product-img">
 									<div class="cat-product-img-in">
-										<img src="images/content/pizza-promo.png" alt="">
+										<img src="images/content/salad-2.png" alt="">
 										<div class="cat-product-icon"></div>
 									</div>
 								</div>
 								<div class="cat-product-content">
-									<div class="cat-product-title">Пицца с курицей и ананасами</div>
+									<div class="cat-product-title">Кукуруза</div>
 									<div class="cat-product-descr">Сыр Моцарелла, ветчина, колбаски охотничьи, соус томатный...</div>
 								</div>
 								<div class="cat-product-bottom">
-									<div class="cat-product-price">475 р.</div>
+									<div class="cat-product-price">145 р.</div>
 									<div class="cat-product-bas-count">
 										<div class="cat-product-bas active">
 											В корзину
@@ -521,16 +522,16 @@
 							<div class="cat-product-box">
 								<div class="cat-product-img">
 									<div class="cat-product-img-in">
-										<img src="images/content/pizza-1.png" alt="">
+										<img src="images/content/salad-1.png" alt="">
 										<div class="cat-product-icon"></div>
 									</div>
 								</div>
 								<div class="cat-product-content">
-									<div class="cat-product-title">Пицца с курицей</div>
+									<div class="cat-product-title">Салат «Греческий»</div>
 									<div class="cat-product-descr">Сыр Моцарелла, ветчина, колбаски охотничьи, соус томатный...</div>
 								</div>
 									<div class="cat-product-bottom">
-										<div class="cat-product-price">475 р.</div>
+										<div class="cat-product-price">275 р.</div>
 										<div class="cat-product-bas-count">
 											<div class="cat-product-bas">
 												В корзину
@@ -549,16 +550,16 @@
 							<div class="cat-product-box">
 								<div class="cat-product-img">
 									<div class="cat-product-img-in">
-										<img src="images/content/pizza-promo.png" alt="">
+										<img src="images/content/salad-2.png" alt="">
 										<div class="cat-product-icon"></div>
 									</div>
 								</div>
 								<div class="cat-product-content">
-									<div class="cat-product-title">Пицца с курицей и ананасами</div>
+									<div class="cat-product-title">Салат «Греческий»</div>
 									<div class="cat-product-descr">Сыр Моцарелла, ветчина, колбаски охотничьи, соус томатный...</div>
 								</div>
 									<div class="cat-product-bottom">
-										<div class="cat-product-price">475 р.</div>
+										<div class="cat-product-price">275 р.</div>
 										<div class="cat-product-bas-count">
 											<div class="cat-product-bas active">
 												В корзину
@@ -580,16 +581,16 @@
 							<div class="cat-product-box">
 								<div class="cat-product-img">
 									<div class="cat-product-img-in">
-										<img src="images/content/pizza-1.png" alt="">
+										<img src="images/content/salad-1.png" alt="">
 										<div class="cat-product-icon"></div>
 									</div>
 								</div>
 								<div class="cat-product-content">
-									<div class="cat-product-title">Пицца с курицей и ананасами</div>
+									<div class="cat-product-title">Салат «Греческий»</div>
 									<div class="cat-product-descr">Сыр Моцарелла, ветчина, колбаски охотничьи, соус томатный...</div>
 								</div>
 									<div class="cat-product-bottom">
-										<div class="cat-product-price">475 р.</div>
+										<div class="cat-product-price">275 р.</div>
 										<div class="cat-product-bas-count">
 											<div class="cat-product-bas active">
 												В корзину
@@ -608,16 +609,16 @@
 							<div class="cat-product-box">
 								<div class="cat-product-img">
 									<div class="cat-product-img-in">
-										<img src="images/content/pizza-promo.png" alt="">
+										<img src="images/content/salad-2.png" alt="">
 										<div class="cat-product-icon"></div>
 									</div>
 								</div>
 								<div class="cat-product-content">
-									<div class="cat-product-title">Пицца с курицей и ананасами</div>
+									<div class="cat-product-title">Салат «Греческий»</div>
 									<div class="cat-product-descr">Сыр Моцарелла, ветчина, колбаски охотничьи, соус томатный...</div>
 								</div>
 									<div class="cat-product-bottom">
-										<div class="cat-product-price">475 р.</div>
+										<div class="cat-product-price">275 р.</div>
 										<div class="cat-product-bas-count">
 											<div class="cat-product-bas active">
 												В корзину
@@ -636,16 +637,241 @@
 							<div class="cat-product-box">
 								<div class="cat-product-img">
 									<div class="cat-product-img-in">
-										<img src="images/content/pizza-1.png" alt="">
+										<img src="images/content/salad-1.png" alt="">
 										<div class="cat-product-icon"></div>
 									</div>
 								</div>
 								<div class="cat-product-content">
-									<div class="cat-product-title">Пицца с курицей и ананасами</div>
+									<div class="cat-product-title">Салат «Греческий»</div>
 									<div class="cat-product-descr">Сыр Моцарелла, ветчина, колбаски охотничьи, соус томатный...</div>
 								</div>
 									<div class="cat-product-bottom">
-										<div class="cat-product-price">475 р.</div>
+										<div class="cat-product-price">275 р.</div>
+										<div class="cat-product-bas-count">
+											<div class="cat-product-bas active">
+												В корзину
+											</div>
+											<div class="cat-product-count">
+												<span class="cat-prod-minus"></span>
+												<span class="cat-count">1</span>
+												<span class="cat-prod-plus"></span>
+											</div>
+										</div>
+									</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="category-row" data-color="c6401d" data-background="F6E7E4" data-category="5">
+	<!--аттрибут data-color - для цвета фильтра и кнопки "В корзину", присваивается для этих элементов в файле scripts/main.js !!! указывается в hex без решетки-->
+	<!--аттрибут data-category - см. data-menu-->
+		<div class="category-out">
+			<div class="category-in">
+				<div class="category-left">
+					<div class="category-left-box">
+						<div class="category-title">Десерты</div>
+						<div class="category-filter">
+							<ul class="category-filter-list">
+								<li class="active"><a href="#">Все</a></li>
+								<li><a href="#">Фильтр 1</a></li>
+								<li><a href="#">Фильтр 2</a></li>
+								<li><a href="#">Фильтр 3</a></li>
+								<li><a href="#">Фильтр 4</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="cat-product">
+					<div class="cat-product-row">
+						<div class="cat-product-one">
+							<div class="cat-product-box">
+								<div class="cat-product-img">
+									<div class="cat-product-img-in">
+										<img src="images/content/des-3.png" alt="">
+										<div class="cat-product-icon"></div>
+									</div>
+								</div>
+								<div class="cat-product-content">
+									<div class="cat-product-title">Салат «Греческий»</div>
+									<div class="cat-product-descr">Сыр Моцарелла, ветчина, колбаски охотничьи, соус томатный...</div>
+								</div>	
+									<div class="cat-product-bottom">
+										<div class="cat-product-price">275 р.</div>
+										<div class="cat-product-bas-count">
+											<div class="cat-product-bas active">
+												В корзину
+											</div>
+											<div class="cat-product-count">
+												<span class="cat-prod-minus"></span>
+												<span class="cat-count">1</span>
+												<span class="cat-prod-plus"></span>
+											</div>
+										</div>
+									</div>
+								
+							</div>
+						</div>
+						<div class="cat-product-one">
+							<div class="cat-product-box">
+								<div class="cat-product-img">
+									<div class="cat-product-img-in">
+										<img src="images/content/des-2.png" alt="">
+										<div class="cat-product-icon"></div>
+									</div>
+								</div>
+								<div class="cat-product-content">
+									<div class="cat-product-title">Кукуруза</div>
+									<div class="cat-product-descr">Сыр Моцарелла, ветчина, колбаски охотничьи, соус томатный...</div>
+								</div>
+								<div class="cat-product-bottom">
+									<div class="cat-product-price">145 р.</div>
+									<div class="cat-product-bas-count">
+										<div class="cat-product-bas active">
+											В корзину
+										</div>
+										<div class="cat-product-count">
+											<span class="cat-prod-minus"></span>
+											<span class="cat-count">1</span>
+											<span class="cat-prod-plus"></span>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+						<div class="cat-product-one">
+							<div class="cat-product-box">
+								<div class="cat-product-img">
+									<div class="cat-product-img-in">
+										<img src="images/content/des-3.png" alt="">
+										<div class="cat-product-icon"></div>
+									</div>
+								</div>
+								<div class="cat-product-content">
+									<div class="cat-product-title">Салат «Греческий»</div>
+									<div class="cat-product-descr">Сыр Моцарелла, ветчина, колбаски охотничьи, соус томатный...</div>
+								</div>
+									<div class="cat-product-bottom">
+										<div class="cat-product-price">275 р.</div>
+										<div class="cat-product-bas-count">
+											<div class="cat-product-bas">
+												В корзину
+											</div>
+											<div class="cat-product-count active">
+												<span class="cat-prod-minus"></span>
+												<span class="cat-count">1</span>
+												<span class="cat-prod-plus"></span>
+											</div>
+										</div>
+									</div>
+								
+							</div>
+						</div>
+						<div class="cat-product-one">
+							<div class="cat-product-box">
+								<div class="cat-product-img">
+									<div class="cat-product-img-in">
+										<img src="images/content/des-3.png" alt="">
+										<div class="cat-product-icon"></div>
+									</div>
+								</div>
+								<div class="cat-product-content">
+									<div class="cat-product-title">Салат «Греческий»</div>
+									<div class="cat-product-descr">Сыр Моцарелла, ветчина, колбаски охотничьи, соус томатный...</div>
+								</div>
+									<div class="cat-product-bottom">
+										<div class="cat-product-price">275 р.</div>
+										<div class="cat-product-bas-count">
+											<div class="cat-product-bas active">
+												В корзину
+											</div>
+											<div class="cat-product-count">
+												<span class="cat-prod-minus"></span>
+												<span class="cat-count">1</span>
+												<span class="cat-prod-plus"></span>
+											</div>
+										</div>
+									</div>
+								
+							</div>
+						</div>
+						
+						<div style="clear:both"></div>
+						
+						<div class="cat-product-one">
+							<div class="cat-product-box">
+								<div class="cat-product-img">
+									<div class="cat-product-img-in">
+										<img src="images/content/des-3.png" alt="">
+										<div class="cat-product-icon"></div>
+									</div>
+								</div>
+								<div class="cat-product-content">
+									<div class="cat-product-title">Салат «Греческий»</div>
+									<div class="cat-product-descr">Сыр Моцарелла, ветчина, колбаски охотничьи, соус томатный...</div>
+								</div>
+									<div class="cat-product-bottom">
+										<div class="cat-product-price">275 р.</div>
+										<div class="cat-product-bas-count">
+											<div class="cat-product-bas active">
+												В корзину
+											</div>
+											<div class="cat-product-count">
+												<span class="cat-prod-minus"></span>
+												<span class="cat-count">1</span>
+												<span class="cat-prod-plus"></span>
+											</div>
+										</div>
+									</div>
+								
+							</div>
+						</div>
+						<div class="cat-product-one">
+							<div class="cat-product-box">
+								<div class="cat-product-img">
+									<div class="cat-product-img-in">
+										<img src="images/content/des-2.png" alt="">
+										<div class="cat-product-icon"></div>
+									</div>
+								</div>
+								<div class="cat-product-content">
+									<div class="cat-product-title">Салат «Греческий»</div>
+									<div class="cat-product-descr">Сыр Моцарелла, ветчина, колбаски охотничьи, соус томатный...</div>
+								</div>
+									<div class="cat-product-bottom">
+										<div class="cat-product-price">275 р.</div>
+										<div class="cat-product-bas-count">
+											<div class="cat-product-bas active">
+												В корзину
+											</div>
+											<div class="cat-product-count">
+												<span class="cat-prod-minus"></span>
+												<span class="cat-count">1</span>
+												<span class="cat-prod-plus"></span>
+											</div>
+										</div>
+									</div>
+								
+							</div>
+						</div>
+						<div class="cat-product-one">
+							<div class="cat-product-box">
+								<div class="cat-product-img">
+									<div class="cat-product-img-in">
+										<img src="images/content/des-3.png" alt="">
+										<div class="cat-product-icon"></div>
+									</div>
+								</div>
+								<div class="cat-product-content">
+									<div class="cat-product-title">Салат «Греческий»</div>
+									<div class="cat-product-descr">Сыр Моцарелла, ветчина, колбаски охотничьи, соус томатный...</div>
+								</div>
+									<div class="cat-product-bottom">
+										<div class="cat-product-price">275 р.</div>
 										<div class="cat-product-bas-count">
 											<div class="cat-product-bas active">
 												В корзину

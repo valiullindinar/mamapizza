@@ -1,5 +1,6 @@
 	// Define object containing your Raphael path data.
 	// goto http://lazylinepainter.info to convert your svg into a svgData object.
+	
 	//preLogo svg paint
 	var svgData = { 
 		"preLogo" :
@@ -35,7 +36,10 @@
 		}
 	}
 	//preLogo svg paint END
-	 
+	
+	
+	//FUNCTIONS WITHOUT JQUERY
+	
 	//function hex to rgb
 	function hexToRgbNew(hex) {
 		var arrBuff = new ArrayBuffer(4);
@@ -45,7 +49,41 @@
 		return arrByte[1] + "," + arrByte[2] + "," + arrByte[3];
 	}
 	//function hex to rgb	
+	
+	
+	
+	
+	
+	
+	
+	//FUNCTIONS WITHOUT JQUERY END
+	
 $(document).ready(function(){
+	
+	//FUNCTIONS WITH JQUERY
+	
+	//function hight == highest element
+	function max_height(block, height_block){
+		var mh = 0;
+		block.each(function () {
+			var h_block = parseInt($(this).height());
+			if(h_block > mh) {
+				mh = h_block;
+			};
+		});
+		height_block.height(mh);		
+	}
+	//function height == highest element END
+	
+	//function child height == parent height
+	function parent_height(child, parent){
+		var child_height = child.height();
+		parent.height(child_height);
+	}
+	//function child height == parent height END
+	
+	//FUNCTIONS WITH JQUERY
+	
 	//preLogo svg animate
 	$('#preLogo').lazylinepainter({
 		"svgData": svgData,
@@ -77,20 +115,9 @@ $(document).ready(function(){
 	//main slider END
 	
 	
-	//function hight == highest element
-	function max_height(block, height_block){
-		var mh = 0;
-		block.each(function () {
-			var h_block = parseInt($(this).height());
-			if(h_block > mh) {
-				mh = h_block;
-			};
-		});
-		height_block.height(mh);		
-	}
-	//function height == highest element END
 	
-	//���� ������� � bg.active == data-color.parents
+	
+	//цвет фильтра и bg.active == data-color.parents
 	$('.category-filter-list>li>a').each(function(){
 		var color = $(this).parents('[data-color]').data('color');
 		$(this).css('color', '#' + color);
@@ -98,26 +125,93 @@ $(document).ready(function(){
 			$(this).css('background-color', 'rgba(' + hexToRgbNew(color) + ', 1)');
 		}
 	})
-	//���� ������� == data-color.parents END
+	//цвет фильтра == data-color.parents END
 	
+	//цвет фона карточки товара == data-background
 	$('.cat-product-img').each(function(){
 		var bg = $(this).parents('[data-background]').data('background');
 		$(this).css('background', '#' + bg);
 	})
+	//цвет фона карточки товара == data-background END
 	
+	
+	//цвет фона кнопки в корзину == data-color
 	$('.cat-product-bas').each(function(){
 		var color = $(this).parents('[data-color]').data('color');
 		$(this).css('background-color', '#' + color);
 	})
+	//цвет фона кнопки в корзину == data-color END
 	
 	$('.cat-product-box').matchHeight();
 	
 	
-	max_height($('.promo-img img'), $('.promo-box-in'));
 	
-	$( window ).resize(function() {
+	
+	$(window).on('resize', function(){
 		max_height($('.promo-img img'), $('.promo-box-in'));
-	})
+		parent_height($('.t-header-in'), $('.t-header'));
+		$('.category-left-box').each(function(){
+			parent_height($(this), $(this).parent('.category-left'));
+		})
+		
+		
+		
+		if($(window).width() >= 768) {
+			$(window).scroll(function(){
+				var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+				//fixed menu
+				var element_top = $('.t-header').offset().top;
+				if(scrolled >= element_top){
+					$('.t-header-in').addClass('fixed-menu');
+				}
+				else{
+					$('.t-header-in').removeClass('fixed-menu');
+				}
+				//fixed menu END
+				
+				//fixed left filter
+				$('.category-in').each(function(){
+					var cat_list_top = $(this).offset().top;
+					var cat_list_bottom = $(this).offset().top + $(this).outerHeight();
+					cat_list_bottom = cat_list_bottom - $(this).find('.category-left-box').outerHeight() - $('.t-header-in.fixed-menu').height();
+					if(scrolled >= cat_list_top - $('.t-header-in.fixed-menu').height() - 20){
+						if(scrolled <= cat_list_bottom){
+							$(this).find('.category-left-box').css('top', scrolled - cat_list_top + $('.t-header-in.fixed-menu').height() + 20);
+						}
+						else{
+							
+						}
+					}
+					else{
+						$(this).find('.category-left-box').css('top', 0);
+					}
+				})
+				//fixed left filter END
+			}).scroll();
+			$(document).on('click', '.meal-menu nav>ul>li>a', function(){
+				var go_cat = $(this).data('menu');
+				if($('[data-category=' + go_cat + ']').length){
+					$('.meal-menu nav>ul>li>a').parent('li').removeClass('active');
+					$(this).parent('li').addClass('active');
+				
+					$('html, body').animate({
+						scrollTop: $('[data-category=' + go_cat + ']').offset().top - $('.t-header-in.fixed-menu').height()
+					}, 500)
+				}
+				else{
+					alert('такой категории еще нет');
+				}
+				
+				return false;
+			})
+		}
+	}).resize();
+	window.onscroll = function() {
+		var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+		/* console.log(scrolled); */
+		$('.t-header-in').innerHTML = scrolled + 'px';
+	}
+	
 })
 	 
 	  

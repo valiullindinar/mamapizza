@@ -228,9 +228,33 @@ STYLE LG,MD
 	
 	.t-header{
 		margin-top: (13/$fontSize) + rem;
+		.t-header-in{
+			background-color: rgba(255, 255, 255, 0);
+			transition: background-color .2s ease-out;
+			
+			&.fixed-menu{
+				background-color: rgba(255, 255, 255, 1);
+				position: fixed;
+				border-bottom: 0.01px solid rgba(0,0,0,0.2);
+				top: 0;
+				z-index: 100;
+				width: 100%;
+				max-width: (1920/$fontSize) + rem;
+				padding: 0rem (40/$fontSize) + rem;
+				left: 50%;
+				/* top: -100%; */
+				@include transform-translateX(-50%);
+				transition: background-color .2s ease-out;
+				/* transition: top .5s ease-out; */
+				&.show{
+					/* top: 0;
+					transition: top .5s ease-out; */
+				}
+			}
+		}
 		.meal-menu{
 			float: left;
-			padding: 22px 0px;
+			padding: (22/$fontSize) + rem 0rem;
 			nav{
 				ul{
 					padding-left: 0px;
@@ -307,7 +331,7 @@ STYLE LG,MD
 	
 	.t-right-menu{
 		float: right;
-		padding-top: 5px;
+		padding-top: (8/$fontSize) + rem;
 		.login{
 			display: inline-block;
 			vertical-align: super;
@@ -456,6 +480,13 @@ STYLE LG,MD
 		.category-left{
 			float: left;
 			width: 15%;
+			position: relative;
+			.category-left-box{
+				position: absolute;
+				top: 0;
+				width: 100%;
+				/* transition: top .1s ease-out; */
+			}
 			.category-title{
 				color: $black;
 				font-size: 36px;
@@ -522,7 +553,23 @@ STYLE LG,MD
 								font-weight: 600;
 								font-size: (13/$fontSize) + rem;
 								padding-left: (20/$fontSize) + rem;
-								padding-right: (20/$fontSize) + rem;
+								padding-right: (28/$fontSize) + rem;
+								position: relative;
+								&:after{
+									content: '';
+									position: absolute;
+									width: 12px;
+									height: 12px;
+									background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="#ffffff" fill-rule="evenodd" d="M10.841 4.841H7.16V1.16a1.159 1.159 0 1 0-2.318 0V4.84H1.16a1.159 1.159 0 1 0 0 2.318H4.84v3.682a1.159 1.159 0 1 0 2.318 0V7.16h3.682a1.159 1.159 0 1 0 0-2.318"/></svg>');
+									transform: translateY(-50%);
+									right: (10/$fontSize) + rem;
+									top: 50%;
+									
+									transition: transform .2s ease-out;
+								}
+								&:hover:after{
+									transform: rotate(180deg) translateY(50%);
+								}
 								&.active{
 									display: block;
 								}

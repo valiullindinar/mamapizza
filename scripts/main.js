@@ -188,12 +188,13 @@ $(document).ready(function(){
 				})
 				//fixed left filter END
 			}).scroll();
-			$(document).on('click', '.meal-menu nav>ul>li>a', function(){
+			$(document).on('click', '.t-header-in nav>ul>li>a', function(){
+				
 				var go_cat = $(this).data('menu');
-				if($('[data-category=' + go_cat + ']').length){
+				
+				if($('[data-category=' + go_cat + ']').length > 0){
 					$('.meal-menu nav>ul>li>a').parent('li').removeClass('active');
 					$(this).parent('li').addClass('active');
-				
 					$('html, body').animate({
 						scrollTop: $('[data-category=' + go_cat + ']').offset().top - $('.t-header-in.fixed-menu').height()
 					}, 500)
@@ -202,7 +203,6 @@ $(document).ready(function(){
 					alert('такой категории еще нет');
 				}
 				
-				return false;
 			})
 		}
 	}).resize();

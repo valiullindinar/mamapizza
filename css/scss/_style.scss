@@ -120,3 +120,15 @@ img{
 	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="#E54B21" fill-rule="evenodd" d="M10.841 4.841H7.16V1.16a1.159 1.159 0 1 0-2.318 0V4.84H1.16a1.159 1.159 0 1 0 0 2.318H4.84v3.682a1.159 1.159 0 1 0 2.318 0V7.16h3.682a1.159 1.159 0 1 0 0-2.318"/></svg>');
 	transition: .3s ease-out;
 }
+
+.category-row{
+	transform: scale(1);
+	transition: .2s ease-out;
+}
+
+.cart-box{
+	position: relative;
+	background: $tirq;
+	z-index: 10;
+	transition: .1s ease-out;
+}

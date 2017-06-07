@@ -130,5 +130,23 @@ img{
 	position: relative;
 	background: $tirq;
 	z-index: 10;
-	transition: .1s ease-out;
+	transition: all .5s ease-out;
+}
+
+/* .cart-box.fixed_cart{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+} */
+
+.cart-overlay{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	top: 0;
+	left: 0;
+	z-index: 5;
+	display: none;
 }

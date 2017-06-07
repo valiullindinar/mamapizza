@@ -198,10 +198,11 @@ $(document).ready(function(){
 				if(offset + (windowHeight/3) <= scrollTop + windowHeight){
 					var scr = (scrollTop + windowHeight) - offset - (windowHeight/3);
 					$('.cart-box').css('margin-top', -(scr * 5));
+					$('.cart-overlay').fadeIn();
 				}
 				else{
 					$('.cart-box').css('margin-top', 0);
-					
+					$('.cart-overlay').fadeOut();
 				}
 				//cart END
 				

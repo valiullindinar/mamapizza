@@ -114,6 +114,14 @@ $(document).ready(function(){
 	})
 	//main slider END
 	
+	//extra slider
+	$('.owl-carousel.cart-extra-owl').owlCarousel({
+		loop:true,
+		nav:false,
+		items: 5
+	})
+	//extra slider END
+	
 	
 	
 	
@@ -142,6 +150,16 @@ $(document).ready(function(){
 	})
 	//цвет фона кнопки в корзину == data-color END
 	
+	//цвет рамки добавления, удаления в корзину
+	$('.count-box').each(function(){
+		var color = $(this).parents('[data-color]').data('color');
+		$(this).css('border-color', '#' + color);
+		$(this).find('.count-minus').css('color', '#' + color);
+		$(this).find('.count-plus').css('color', '#' + color);
+	})
+	//цвет рамки добавления, удаления в корзину END
+	
+	
 	$('.cat-product-box').matchHeight();
 	
 	
@@ -149,8 +167,10 @@ $(document).ready(function(){
 	
 	$(window).on('resize', function(){
 		max_height($('.promo-img img'), $('.promo-box-in'));
+		max_height($('.promo-img img'), $('.promo-title'));
 		parent_height($('.t-header-in'), $('.t-header'));
-	
+		
+		
 		
 		$('.category-left-box').each(function(){
 			parent_height($(this), $(this).parent('.category-left'));
@@ -158,8 +178,15 @@ $(document).ready(function(){
 		
 		
 		
+		//width more than 768
+		
 		if($(window).width() >= 768) {
 			$(window).scroll(function(){
+				
+				//очень быдло код start
+				$('.t-header-in').css('height', $('.t-header').height() - 10);
+				//очень быдло код end
+				
 				var scrolled = window.pageYOffset || document.documentElement.scrollTop;
 				//fixed menu
 				var element_top = $('.t-header').offset().top;
@@ -170,43 +197,89 @@ $(document).ready(function(){
 					$('.t-header-in').removeClass('fixed-menu');
 				}
 				//fixed menu END
+				var scrollTop = $(window).scrollTop();
+				var windowHeight = $(window).height();
+				
+				//menu active
+				$('[data-category]').each(function(){
+					/* var offset = $(this).offset().top;
+					if(scrollTop + windowHeight > offset){
+						var n = $(this).data('category');
+						n = n.toString();
+						
+						$('[data-menu]').each(function(){
+							var m = $(this).data('menu');
+							m = m.toString();
+							console.log(n);
+							if(n == m){
+								$(this).addClass('active');
+							}
+						})
+					} */
+					
+				})				
+				//menu active END
 				
 				//fixed left filter
-				$('.category-in').each(function(){
-					var cat_list_top = $(this).offset().top;
-					var cat_list_bottom = $(this).offset().top + $(this).outerHeight();
-					cat_list_bottom = cat_list_bottom - $(this).find('.category-left-box').outerHeight() - $('.t-header-in.fixed-menu').height();
-					var scroll_stop = 20;
-					if(scrolled >= cat_list_top - $('.t-header-in.fixed-menu').height() - scroll_stop){
-						if(scrolled <= cat_list_bottom - (scroll_stop * 2)){
-							$(this).find('.category-left-box').css('top', scrolled - cat_list_top + $('.t-header-in.fixed-menu').height() + scroll_stop);
+				function fixed_filter(){
+					$('.category-in').each(function(){
+						var cat_list_top = $(this).offset().top;
+						var cat_list_bottom = $(this).offset().top + $(this).outerHeight();
+						cat_list_bottom = cat_list_bottom - $(this).find('.category-left-box').outerHeight() - $('.t-header-in.fixed-menu').height();
+						var scroll_stop = 20;
+						if(scrolled >= cat_list_top - $('.t-header-in.fixed-menu').height() - scroll_stop){
+							if(scrolled <= cat_list_bottom - (scroll_stop * 2)){
+								$(this).find('.category-left-box').css('top', scrolled - cat_list_top + $('.t-header-in.fixed-menu').height() + scroll_stop);
+							}
+							else{
+								
+							}
 						}
 						else{
-							
+							$(this).find('.category-left-box').css('top', 0);
 						}
-					}
-					else{
-						$(this).find('.category-left-box').css('top', 0);
-					}
-				})
+					})
+				}
+				
 				//fixed left filter END
 				
 				//cart
 				var offset = $('.cart-row').offset().top;
-				var scrollTop = $(window).scrollTop();
-				var windowHeight = $(window).height();
-				if(offset + (windowHeight/3) <= scrollTop + windowHeight){
-					var scr = (scrollTop + windowHeight) - offset - (windowHeight/3);
-					$('.cart-box').css('margin-top', -(scr * 5));
+				if(scrollTop + windowHeight - (windowHeight/3) > offset){
 					$('.cart-overlay').fadeIn();
+					var scr = (scrollTop + windowHeight) - offset - (windowHeight/5);
+					if(!($('.cart-row').hasClass('utte'))){
+						
+						$('.cart-row').css('margin-top', -scr);
+						$('.cart-row').addClass('utte');	
+						$('.categories-row').addClass('scaled');
+					}		
 				}
 				else{
-					$('.cart-box').css('margin-top', 0);
+					fixed_filter();
+					$('.categories-row').removeClass('scaled');
+					$('.cart-row').removeClass('utte');
 					$('.cart-overlay').fadeOut();
+					$('.cart-row').css('margin-top', '0');
 				}
 				//cart END
 				
-			}).scroll();
+			});
+			
+			$(document).on('mousewheel DOMMouseScroll', '.cart-row.utte, .cart-overlay, footer', function(e){
+				var e0 = e.originalEvent,
+				delta = e0.wheelDelta || -e0.detail;
+				this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+				e.preventDefault();
+				
+				console.log($('.cart-row').offset().top);
+				console.log($(window).scrollTop());
+				
+				$('.cart-row').css('margin-top', $(window).scrollTop() - $('.cart-row').offset().top);
+				
+				
+			})
+			
 			$(document).on('click', '.t-header-in nav>ul>li>a', function(){
 				
 				var go_cat = $(this).data('menu');
@@ -223,9 +296,24 @@ $(document).ready(function(){
 				}
 				
 			})
+			$(document).on('mouseenter', '.cart-extra-item', function(){
+				$(this).find('.cart-sl-title').slideDown(200);
+				$(this).find('.cart-sl-count').slideDown(200);
+			})
+			$(document).on('mouseleave', '.cart-extra-item', function(){
+				$(this).find('.cart-sl-title').slideUp(200);
+				$(this).find('.cart-sl-count').slideUp(200);
+			})
+			
+			$(document).on('click', '.cart-extra-catalog', function(){
+				$('.cart-extra-catalog').removeClass('active');
+				$(this).addClass('active');
+				$('.cart-extra-slider').hide();
+				$('.cart-extra-slider[data-catslider="' + $(this).data('catalog') + '"]').show();
+			})
 		}
+		//width more than 768 END
 	}).resize();
-	
 })
 	 
 	  
